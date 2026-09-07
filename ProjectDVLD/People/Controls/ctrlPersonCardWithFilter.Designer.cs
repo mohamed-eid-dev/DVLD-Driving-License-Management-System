@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbFilters = new System.Windows.Forms.GroupBox();
             this.btnAddNewPerson = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ctrlPersonCard1 = new ProjectDVLD.People.Controls.ctrlPersonCard();
+            this.epErrorHandle = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ctrlPersonInfo = new ProjectDVLD.People.Controls.ctrlPersonCard();
             this.gbFilters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epErrorHandle)).BeginInit();
             this.SuspendLayout();
             // 
             // gbFilters
@@ -59,22 +62,24 @@
             this.btnAddNewPerson.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddNewPerson.Image = global::ProjectDVLD.Properties.Resources.AddPerson_32;
             this.btnAddNewPerson.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddNewPerson.Location = new System.Drawing.Point(687, 25);
+            this.btnAddNewPerson.Location = new System.Drawing.Point(737, 25);
             this.btnAddNewPerson.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddNewPerson.Name = "btnAddNewPerson";
             this.btnAddNewPerson.Size = new System.Drawing.Size(44, 37);
             this.btnAddNewPerson.TabIndex = 20;
             this.btnAddNewPerson.UseVisualStyleBackColor = true;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
             // btnFind
             // 
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFind.Image = global::ProjectDVLD.Properties.Resources.SearchPerson1;
-            this.btnFind.Location = new System.Drawing.Point(631, 25);
+            this.btnFind.Location = new System.Drawing.Point(683, 25);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(44, 37);
             this.btnFind.TabIndex = 18;
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // cbFilterBy
             // 
@@ -83,19 +88,21 @@
             this.cbFilterBy.Items.AddRange(new object[] {
             "National No.",
             "Person ID"});
-            this.cbFilterBy.Location = new System.Drawing.Point(115, 25);
+            this.cbFilterBy.Location = new System.Drawing.Point(115, 28);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(210, 28);
             this.cbFilterBy.TabIndex = 16;
+            this.cbFilterBy.TextChanged += new System.EventHandler(this.cbFilterBy_TextChanged);
             // 
             // txtFilterValue
             // 
             this.txtFilterValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFilterValue.Location = new System.Drawing.Point(338, 27);
+            this.txtFilterValue.Location = new System.Drawing.Point(358, 28);
             this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.Size = new System.Drawing.Size(268, 27);
             this.txtFilterValue.TabIndex = 17;
+            this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress);
             // 
             // label1
             // 
@@ -107,26 +114,31 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Find By:";
             // 
-            // ctrlPersonCard1
+            // epErrorHandle
             // 
-            this.ctrlPersonCard1.BackColor = System.Drawing.Color.White;
-            this.ctrlPersonCard1.Location = new System.Drawing.Point(26, 122);
-            this.ctrlPersonCard1.Name = "ctrlPersonCard1";
-            this.ctrlPersonCard1.Size = new System.Drawing.Size(867, 296);
-            this.ctrlPersonCard1.TabIndex = 18;
+            this.epErrorHandle.ContainerControl = this;
+            // 
+            // ctrlPersonInfo
+            // 
+            this.ctrlPersonInfo.BackColor = System.Drawing.Color.White;
+            this.ctrlPersonInfo.Location = new System.Drawing.Point(26, 122);
+            this.ctrlPersonInfo.Name = "ctrlPersonInfo";
+            this.ctrlPersonInfo.Size = new System.Drawing.Size(867, 296);
+            this.ctrlPersonInfo.TabIndex = 18;
             // 
             // ctrlPersonCardWithFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.ctrlPersonCard1);
+            this.Controls.Add(this.ctrlPersonInfo);
             this.Controls.Add(this.gbFilters);
             this.Name = "ctrlPersonCardWithFilter";
             this.Size = new System.Drawing.Size(922, 443);
-            this.Load += new System.EventHandler(this.ctrlPersonCardWithFilter_Load);
+            //this.Load += new System.EventHandler(this.ctrlPersonCardWithFilter_Load);
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epErrorHandle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -139,6 +151,7 @@
         private System.Windows.Forms.ComboBox cbFilterBy;
         private System.Windows.Forms.TextBox txtFilterValue;
         private System.Windows.Forms.Label label1;
-        private ctrlPersonCard ctrlPersonCard1;
+        private ctrlPersonCard ctrlPersonInfo;
+        private System.Windows.Forms.ErrorProvider epErrorHandle;
     }
 }

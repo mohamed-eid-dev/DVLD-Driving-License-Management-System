@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,13 +18,13 @@ namespace ProjectDVLD.People
 {
     public partial class frmAddUpdatePerson : Form
     {
-        #region Data Model
+        #region Failds
 
         private Person _person;
 
-        //private delegate void BackDataHandel(object sender,int personID);
+        public delegate void BackDataHandel(object sender, int personID);
 
-        //private event BackDataHandel BackData;
+        public event BackDataHandel BackData;
         #endregion
 
         #region Constructor
@@ -323,8 +324,8 @@ namespace ProjectDVLD.People
                 MessageBox.Show( result.Message);
                 DialogResult = DialogResult.OK;
                 _person = result.Data;
-                _ResetDefaultValues();
-                //BackData?.Invoke(this, result.Data.PersonID);
+                //_ResetDefaultValues();
+                BackData?.Invoke(this, _person.PersonID);
                 }
                 else
                 {
@@ -334,7 +335,12 @@ namespace ProjectDVLD.People
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+
             this.Close();
+
+            if(_person.Mode == enMode.Update && _person.PersonID != -1)
+                BackData?.Invoke(this, _person.PersonID);
+
         }
 
 

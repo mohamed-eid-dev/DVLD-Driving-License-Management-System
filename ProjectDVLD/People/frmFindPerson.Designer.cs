@@ -47,6 +47,7 @@
             this.btnClose.TabIndex = 117;
             this.btnClose.Text = "  Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblTitle
             // 
@@ -61,8 +62,9 @@
             // 
             // ctrlPersonCardWithFilter1
             // 
+            this.ctrlPersonCardWithFilter1.AddPersonDisable = false;
             this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
-            this.ctrlPersonCardWithFilter1.FilterDisabe = false;
+            this.ctrlPersonCardWithFilter1.FilterDisable = false;
             this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(-5, 52);
             this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
             this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(909, 432);

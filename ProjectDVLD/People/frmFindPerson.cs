@@ -12,6 +12,14 @@ namespace ProjectDVLD.People
 {
     public partial class frmFindPerson : Form
     {
+
+        #region Failds
+
+        public event Action<object, int> DataBack;
+
+
+        #endregion
+
         public frmFindPerson()
         {
             InitializeComponent();
@@ -19,7 +27,18 @@ namespace ProjectDVLD.People
 
         private void frmFindPerson_Load(object sender, EventArgs e)
         {
-
+            ctrlPersonCardWithFilter1.LoadControl();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            if (ctrlPersonCardWithFilter1.personID != -1)
+            {
+                DataBack?.Invoke(this, ctrlPersonCardWithFilter1.personID);
+            }
+
+            this.Close();
+        }
+
     }
 }

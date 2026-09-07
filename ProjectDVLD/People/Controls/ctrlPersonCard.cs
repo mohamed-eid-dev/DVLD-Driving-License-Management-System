@@ -17,13 +17,29 @@ namespace ProjectDVLD.People.Controls
 {
     public partial class ctrlPersonCard : UserControl
     {
-        private  Person _person;
+        #region Falids
+
+        private Person _person;
         private int _personID = -1;
         public Person Person { get { return _person; } }
         public int PersonID { get {return _personID; } }
+
+        #endregion
+
         public ctrlPersonCard()
         {
             InitializeComponent();
+        }
+
+        #region Methods
+
+        public void LoadPersonData()
+        {
+
+            if (_person == null)
+                return;
+
+            _FillPersonInfo();
 
         }
 
@@ -137,9 +153,10 @@ namespace ProjectDVLD.People.Controls
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        public void AddPerson(Person person)
         {
-
+            _person = person;
         }
+        #endregion
     }
 }

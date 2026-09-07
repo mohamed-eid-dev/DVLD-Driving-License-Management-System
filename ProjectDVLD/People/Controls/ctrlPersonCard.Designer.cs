@@ -195,7 +195,7 @@
             // 
             this.lblPersonID.AutoSize = true;
             this.lblPersonID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPersonID.Location = new System.Drawing.Point(131, 37);
+            this.lblPersonID.Location = new System.Drawing.Point(137, 36);
             this.lblPersonID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPersonID.Name = "lblPersonID";
             this.lblPersonID.Size = new System.Drawing.Size(68, 25);
@@ -253,7 +253,7 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Person Information";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            //this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pictureBox4
             // 
@@ -423,6 +423,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ctrlPersonCard";
             this.Size = new System.Drawing.Size(869, 311);
+            //this.Load += new System.EventHandler(this.ctrlPersonCard_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

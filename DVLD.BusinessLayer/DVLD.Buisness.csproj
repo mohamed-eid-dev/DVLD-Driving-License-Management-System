@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserService.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="Validation\InputValidator.cs" />
     <Compile Include="CountryService.cs" />

@@ -2,6 +2,7 @@
 
 using ProjectDVLD.People;
 using ProjectDVLD.People.Controls;
+using ProjectDVLD.user;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace ProjectDVLD
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            Application.Run(new frmListPeople());
+            Application.Run(new frmListUsers());
         }
     }   
 }

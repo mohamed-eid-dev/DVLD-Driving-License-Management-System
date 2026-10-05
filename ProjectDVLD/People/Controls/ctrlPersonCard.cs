@@ -157,6 +157,12 @@ namespace ProjectDVLD.People.Controls
         {
             _person = person;
         }
+
         #endregion
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

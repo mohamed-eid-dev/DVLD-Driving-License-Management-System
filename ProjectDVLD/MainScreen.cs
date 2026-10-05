@@ -1,5 +1,6 @@
 ﻿using DVLD.Application;
 using ProjectDVLD.People;
+using ProjectDVLD.user;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,15 +20,17 @@ namespace ProjectDVLD
             InitializeComponent();
         }
 
-        private void MainScreen_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmListPeople frm = new frmListPeople();
             frm.ShowDialog();
         }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            frmListUsers listUsers = new frmListUsers();
+            listUsers.ShowDialog();
+        }
+
     }
 }

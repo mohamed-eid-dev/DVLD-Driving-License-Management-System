@@ -327,6 +327,7 @@
             this.toolStripMenuItem3.Padding = new System.Windows.Forms.Padding(5, 1, 5, 0);
             this.toolStripMenuItem3.Size = new System.Drawing.Size(141, 69);
             this.toolStripMenuItem3.Text = "Users";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -391,7 +392,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.MainScreen_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

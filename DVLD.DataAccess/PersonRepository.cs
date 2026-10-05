@@ -11,7 +11,6 @@
     using System.Threading.Tasks;
     namespace DVLD.DataAccessLayer
     {
-    // PersonRepository.cs
 
     public static class PersonRepository 
     {

@@ -58,6 +58,7 @@
             this.btnClose.TabIndex = 118;
             this.btnClose.Text = "  Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // ctrlPersonCard1
             // 
@@ -79,7 +80,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmShowPersonInfo";
             this.Text = "frmShowPersonInfo";
-            this.Load += new System.EventHandler(this.frmShowPersonInfo_Load);
+            //this.Load += new System.EventHandler(this.frmShowPersonInfo_Load);
             this.ResumeLayout(false);
 
         }

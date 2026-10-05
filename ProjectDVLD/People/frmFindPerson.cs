@@ -16,8 +16,6 @@ namespace ProjectDVLD.People
         #region Failds
 
         public event Action<object, int> DataBack;
-
-
         #endregion
 
         public frmFindPerson()
@@ -25,16 +23,11 @@ namespace ProjectDVLD.People
             InitializeComponent();
         }
 
-        private void frmFindPerson_Load(object sender, EventArgs e)
-        {
-            ctrlPersonCardWithFilter1.LoadControl();
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (ctrlPersonCardWithFilter1.personID != -1)
+            if (ctrlPersonCardWithFilter1.PersonID != -1)
             {
-                DataBack?.Invoke(this, ctrlPersonCardWithFilter1.personID);
+                DataBack?.Invoke(this, ctrlPersonCardWithFilter1.PersonID);
             }
 
             this.Close();

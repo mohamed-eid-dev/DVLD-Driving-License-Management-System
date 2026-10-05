@@ -135,7 +135,7 @@
             this.Controls.Add(this.gbFilters);
             this.Name = "ctrlPersonCardWithFilter";
             this.Size = new System.Drawing.Size(922, 443);
-            //this.Load += new System.EventHandler(this.ctrlPersonCardWithFilter_Load);
+            this.Load += new System.EventHandler(this.ctrlPersonCardWithFilter_Load);
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epErrorHandle)).EndInit();

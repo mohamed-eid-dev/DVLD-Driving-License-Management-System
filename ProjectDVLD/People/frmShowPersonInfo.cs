@@ -15,19 +15,24 @@ namespace ProjectDVLD.People
 {
     public partial class frmShowPersonInfo : Form
     {
-        private int _personID;
+
         public frmShowPersonInfo(int personID)
         {
             InitializeComponent();
-
-            _personID =  personID;
-            
+            ctrlPersonCard1.LoadPersonData(personID);
+           
         }
 
-        private void frmShowPersonInfo_Load(object sender, EventArgs e)
+        public frmShowPersonInfo(string notionalNo)
         {
-            ctrlPersonCard1.LoadPersonData(_personID);
+            InitializeComponent();
+            ctrlPersonCard1.LoadPersonData(notionalNo);
+
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

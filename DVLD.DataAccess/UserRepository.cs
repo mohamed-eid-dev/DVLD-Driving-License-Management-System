@@ -78,7 +78,6 @@ namespace DVLD.DataAccess
             }
         }
 
-        /// ///////////////////////////////////////////////////////////
         public static bool Update(User user)
         {
             using (var connection = new SqlConnection(DBConnection.ConnectionString))
@@ -103,10 +102,19 @@ namespace DVLD.DataAccess
             }
         }
 
+        /// ///////////////////////////////////////////////////////////
         public static bool Delete(int userID)
         {
+            string query = @"delete from Users where UserID = @UserID";
+          using (var connection = new SqlConnection(DBConnection.ConnectionString))
+            using (var command = new SqlCommand(query, connection))
+            {
+                command.Parameters.Add("@UserID", SqlDbType.Int).Value = userID;
 
-            return false;
+                connection.Open();
+              int rowsAffected =   command.ExecuteNonQuery();
+                return rowsAffected > 0;
+            }
         }
 
         public static User Find(int userID)

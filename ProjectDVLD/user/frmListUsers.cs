@@ -19,6 +19,7 @@ namespace ProjectDVLD.user
         public frmListUsers()
         {
             InitializeComponent();
+            _users = new List<User>();
         }
 
         #region Methods
@@ -27,9 +28,13 @@ namespace ProjectDVLD.user
 
         private void _InitialFormSetting()
         {
-            cbFilterBy.Text = "None";
-            cbIsActive.Visible = false;
-            txtFilterValue.Visible = false;
+            if(_users.Count == 0)
+                return;
+            
+
+            cbUserTpye.Text = "None";
+            //cbIsActive.Visible = false;
+            //txtFilterValue.Visible = false;
 
             lblRecordsCount.Text = _users.Count.ToString();
         }
@@ -78,10 +83,34 @@ namespace ProjectDVLD.user
         }
 
 
-        #endregion
 
         #endregion
 
+        #endregion
 
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbPersonImage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbUserTpye_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
